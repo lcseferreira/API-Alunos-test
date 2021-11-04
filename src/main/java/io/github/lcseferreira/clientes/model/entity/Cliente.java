@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+// ENTIDADE DO BANCO DE DADOS
 @Entity
 // Getters, Setters, hashCode, Equals ATRAVÉS DO LOMBOK
 @Data
@@ -22,7 +23,7 @@ public class Cliente {
     @Column(nullable = false, length = 11)
     private String cpf;
 
-    @Column
+    @Column(name = "id_cliente")
     private LocalDate dataCadastro;
 }
-// ENTIDADE DO BANCO DE DADOS
+

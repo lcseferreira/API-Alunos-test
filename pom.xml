@@ -37,7 +37,8 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<scope>test</scope>
+			<version>1.4.200</version>
+			<scope>compile</scope>
 		</dependency>
 
 		<dependency>

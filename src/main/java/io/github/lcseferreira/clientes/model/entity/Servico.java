@@ -19,7 +19,7 @@ public class Servico {
     private String descricao;
 
     // RELACIONAMENTO UM PARA MUITOS
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
 

@@ -1,10 +1,15 @@
 package io.github.lcseferreira.clientes.model.entity;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
-// ENTIDADE
 @Entity
+// Getters, Setters, hashCode, Equals ATRAVÉS DO LOMBOK
+@Data
 public class Cliente {
 
     @Id
@@ -20,3 +25,4 @@ public class Cliente {
     @Column
     private LocalDate dataCadastro;
 }
+// ENTIDADE DO BANCO DE DADOS

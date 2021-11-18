@@ -2,6 +2,7 @@ package io.github.lcseferreira.clientes.rest.exception;
 
 import lombok.Getter;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class APIErrors {
@@ -14,6 +15,6 @@ public class APIErrors {
     }
 
     public APIErrors(String message) {
-        this.errors = List.of(message);
+        this.errors = Arrays.asList(message);
     }
 }

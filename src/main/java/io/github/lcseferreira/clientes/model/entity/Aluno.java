@@ -71,6 +71,19 @@ public class Aluno {
     @Column(name = "contato_do_pai2", length = 20)
     private String contatoPai2;
 
+    @Column(name = "nome_do_responsavel", length = 150)
+    private String nomeResponsavel;
+
+    @Column(name = "cpf_do_responsavel", length = 11)
+    @CPF(message = "CPF inválido")
+    private String cpfResponsavel;
+
+    @Column(name = "contato_do_responsavel1", length = 20)
+    private String contatoResponsavel1;
+
+    @Column(name = "contato_do_responsavel", length = 20)
+    private String contatoResponsavel2;
+
     @Column(name = "nome_da_escola", length = 150)
     private String nomeEscola;
 

@@ -51,10 +51,10 @@ public class Aluno {
     @CPF(message = "CPF inválido")
     private String cpfMae;
 
-    @Column(name = "contato_da_mae1", length = 20)
+    @Column(name = "contato_da_mae1", length = 32)
     private String contatoMae1;
 
-    @Column(name = "contato_da_mae2", length = 20)
+    @Column(name = "contato_da_mae2", length = 32)
     private String contatoMae2;
 
     @Column(name = "nome_do_pai", length = 150)
@@ -64,10 +64,10 @@ public class Aluno {
     @CPF(message = "CPF inválido")
     private String cpfPai;
 
-    @Column(name = "contato_do_pai1", length = 20)
+    @Column(name = "contato_do_pai1", length = 32)
     private String contatoPai1;
 
-    @Column(name = "contato_do_pai2", length = 20)
+    @Column(name = "contato_do_pai2", length = 32)
     private String contatoPai2;
 
     @Column(name = "nome_do_responsavel", length = 150)
@@ -77,10 +77,10 @@ public class Aluno {
     @CPF(message = "CPF inválido")
     private String cpfResponsavel;
 
-    @Column(name = "contato_do_responsavel1", length = 20)
+    @Column(name = "contato_do_responsavel1", length = 32)
     private String contatoResponsavel1;
 
-    @Column(name = "contato_do_responsavel", length = 20)
+    @Column(name = "contato_do_responsavel", length = 32)
     private String contatoResponsavel2;
 
     @Column(name = "nome_da_escola", length = 150)
@@ -125,16 +125,16 @@ public class Aluno {
     @Column(name = "cep", length = 10)
     private String cep;
 
-    @Column(name = "resumo_aluno", columnDefinition = "TEXT")
+    @Column(name = "resumo_aluno", columnDefinition = "MEDIUMTEXT")
     private String resumoAluno;
 
-    @Column(name = "outras_infos", columnDefinition = "TEXT")
+    @Column(name = "outras_infos", columnDefinition = "MEDIUMTEXT")
     private String outrasInfos;
 
-    @Column(name = "relatorio_medico", columnDefinition = "TEXT")
+    @Column(name = "relatorio_medico", columnDefinition = "MEDIUMTEXT")
     private String relatorioMedico;
 
-    @Column(name = "relatorio_pedagogico", columnDefinition = "TEXT")
+    @Column(name = "relatorio_pedagogico", columnDefinition = "MEDIUMTEXT")
     private String relatorioPedagogico;
 
     @PrePersist

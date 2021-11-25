@@ -6,7 +6,6 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -28,7 +27,7 @@ public class Aluno {
     @CPF(message = "CPF inválido")
     private String cpf;
 
-    @Column(name = "ra", nullable = false, length = 9)
+    @Column(name = "ra", nullable = false, length = 10)
     @NotEmpty(message = "Campo RA é obrigatório")
     private String ra;
 

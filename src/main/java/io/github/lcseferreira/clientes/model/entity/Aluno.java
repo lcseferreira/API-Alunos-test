@@ -125,16 +125,16 @@ public class Aluno {
     @Column(name = "cep", length = 10)
     private String cep;
 
-    @Column(name = "resumo_aluno", columnDefinition = "MEDIUMTEXT")
+    @Column(name = "resumo_aluno", columnDefinition = "TEXT")
     private String resumoAluno;
 
-    @Column(name = "outras_infos", columnDefinition = "MEDIUMTEXT")
+    @Column(name = "outras_infos", columnDefinition = "TEXT")
     private String outrasInfos;
 
-    @Column(name = "relatorio_medico", columnDefinition = "MEDIUMTEXT")
+    @Column(name = "relatorio_medico", columnDefinition = "TEXT")
     private String relatorioMedico;
 
-    @Column(name = "relatorio_pedagogico", columnDefinition = "MEDIUMTEXT")
+    @Column(name = "relatorio_pedagogico", columnDefinition = "TEXT")
     private String relatorioPedagogico;
 
     @PrePersist

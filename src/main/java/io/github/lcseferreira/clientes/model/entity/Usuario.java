@@ -25,4 +25,6 @@ public class Usuario {
     @NotEmpty(message = "Campo Senha é obrigatório")
     private String password;
 
+    @Column
+    private String role;
 }

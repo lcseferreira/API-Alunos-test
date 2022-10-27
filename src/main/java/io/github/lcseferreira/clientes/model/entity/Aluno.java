@@ -8,10 +8,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 
-@Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data // ToString, EqualsAndHashCode, Getter, Setter, RequiredArgsConstructor
+@NoArgsConstructor // Constructor sem argumentos
+@AllArgsConstructor // Constructor de todas propriedade
 @Builder
 public class Aluno {
 
@@ -107,23 +106,9 @@ public class Aluno {
     @Column(name = "deficiencia", length = 150)
     private String deficiencia;
 
-    @Column(name = "logradouro")
-    private String logradouro;
-
-    @Column(name = "numero", length = 10)
-    private String numero;
-
-    @Column(name = "bairro", length = 50)
-    private String bairro;
-
-    @Column(name = "cidade", length = 50)
-    private String cidade;
-
-    @Column(name = "estado", length = 2)
-    private String estado;
-
-    @Column(name = "cep", length = 10)
-    private String cep;
+    @OneToOne
+    @JoinColumn(name = "endereco_id")
+    private Endereco endereco;
 
     @Column(name = "resumo_aluno", columnDefinition = "TEXT")
     private String resumoAluno;

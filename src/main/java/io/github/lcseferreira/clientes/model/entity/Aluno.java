@@ -22,7 +22,6 @@ public class Aluno {
     private String nome;
 
     @Column(name = "cpf", length = 11, unique = true)
-    @NotEmpty(message = "Campo CPF é obrigatório")
     @CPF(message = "CPF inválido")
     private String cpf;
 
@@ -38,7 +37,7 @@ public class Aluno {
     @NotEmpty(message = "Campo Sexo é obrigatório")
     private String sexo;
 
-    @Column(name = "nome_do_professor", length = 150)
+    /*@Column(name = "nome_do_professor", length = 150)
     private String nomeProfessor;
 
     @Column(name = "professor_especial", length = 150)
@@ -48,7 +47,7 @@ public class Aluno {
     private String necessitaCuidador;
 
     @Column(name = "cuidador", length = 150)
-    private String cuidador;
+    private String cuidador;*/
 
     @Column(name = "deficiencia", length = 150)
     private String deficiencia;
@@ -61,17 +60,8 @@ public class Aluno {
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
 
-    @Column(name = "resumo_aluno", columnDefinition = "TEXT")
-    private String resumoAluno;
-
-    @Column(name = "outras_infos", columnDefinition = "TEXT")
-    private String outrasInfos;
-
-    @Column(name = "relatorio_medico", columnDefinition = "TEXT")
-    private String relatorioMedico;
-
-    @Column(name = "relatorio_pedagogico", columnDefinition = "TEXT")
-    private String relatorioPedagogico;
+    @OneToOne
+    @JoinColumn(name = "relatorio_id")
 
     @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")

@@ -25,6 +25,15 @@ public class Escola {
     @Column(name = "periodo_escolar", length = 40)
     private String periodoEscolar;
 
+    @Column(name = "professor", length = 150)
+    private String professor;
+
+    @Column(name = "professor_especial", length = 150)
+    private String professorEspecial;
+
+    @Column(name = "cuidador", length = 150)
+    private String cuidador;
+
     @OneToOne
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;

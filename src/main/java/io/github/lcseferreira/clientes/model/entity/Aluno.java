@@ -37,20 +37,11 @@ public class Aluno {
     @NotEmpty(message = "Campo Sexo é obrigatório")
     private String sexo;
 
-    /*@Column(name = "nome_do_professor", length = 150)
-    private String nomeProfessor;
-
-    @Column(name = "professor_especial", length = 150)
-    private String nomeProfessorEspecial;
+    @Column(name = "deficiencia", length = 150)
+    private String deficiencia;
 
     @Column(name = "necessita_cuidador", length = 10)
     private String necessitaCuidador;
-
-    @Column(name = "cuidador", length = 150)
-    private String cuidador;*/
-
-    @Column(name = "deficiencia", length = 150)
-    private String deficiencia;
 
     @OneToMany
     @JoinColumn(name = "responsavel_id")

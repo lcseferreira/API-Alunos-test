@@ -8,10 +8,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 
+
 @Data // ToString, EqualsAndHashCode, Getter, Setter, RequiredArgsConstructor
 @NoArgsConstructor // Constructor sem argumentos
-@AllArgsConstructor // Constructor de todas propriedade
+@AllArgsConstructor // Constructor de todas propriedades
 @Builder
+@Entity
 public class Aluno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,7 +45,7 @@ public class Aluno {
     @Column(name = "necessita_cuidador", length = 10)
     private String necessitaCuidador;
 
-    @OneToMany
+    @OneToOne
     @JoinColumn(name = "responsavel_id")
     private Responsavel responsavel;
 
@@ -53,6 +55,7 @@ public class Aluno {
 
     @OneToOne
     @JoinColumn(name = "relatorio_id")
+    private Relatorio relatorio;
 
     @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")

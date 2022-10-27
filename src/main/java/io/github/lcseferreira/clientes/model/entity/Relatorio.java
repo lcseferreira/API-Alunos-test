@@ -4,15 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data // ToString, EqualsAndHashCode, Getter, Setter, RequiredArgsConstructor
 @NoArgsConstructor // Constructor sem argumentos
 @AllArgsConstructor // Constructor de todas propriedade
-public class Relatorios {
+@Entity
+public class Relatorio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

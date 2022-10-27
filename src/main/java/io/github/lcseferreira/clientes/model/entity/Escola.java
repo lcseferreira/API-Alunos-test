@@ -10,6 +10,7 @@ import javax.validation.constraints.NotEmpty;
 @Data // ToString, EqualsAndHashCode, Getter, Setter, RequiredArgsConstructor
 @NoArgsConstructor // Constructor sem argumentos
 @AllArgsConstructor // Constructor de todas propriedade
+@Entity
 public class Escola {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

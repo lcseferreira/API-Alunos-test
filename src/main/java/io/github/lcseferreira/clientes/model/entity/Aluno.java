@@ -41,47 +41,7 @@ public class Aluno {
     @Column(name = "sexo")
     @NotEmpty(message = "Campo Sexo é obrigatório")
     private String sexo;
-
-    @Column(name = "nome_da_mae", length = 150)
-    @NotEmpty(message = "Campo Nome da Mãe é obrigatório")
-    private String nomeMae;
-
-    @Column(name = "cpf_da_mae", length = 11)
-    @CPF(message = "CPF inválido")
-    private String cpfMae;
-
-    @Column(name = "contato_da_mae1", length = 32)
-    private String contatoMae1;
-
-    @Column(name = "contato_da_mae2", length = 32)
-    private String contatoMae2;
-
-    @Column(name = "nome_do_pai", length = 150)
-    private String nomePai;
-
-    @Column(name = "cpf_do_pai", length = 11)
-    @CPF(message = "CPF inválido")
-    private String cpfPai;
-
-    @Column(name = "contato_do_pai1", length = 32)
-    private String contatoPai1;
-
-    @Column(name = "contato_do_pai2", length = 32)
-    private String contatoPai2;
-
-    @Column(name = "nome_do_responsavel", length = 150)
-    private String nomeResponsavel;
-
-    @Column(name = "cpf_do_responsavel", length = 11)
-    @CPF(message = "CPF inválido")
-    private String cpfResponsavel;
-
-    @Column(name = "contato_do_responsavel1", length = 32)
-    private String contatoResponsavel1;
-
-    @Column(name = "contato_do_responsavel", length = 32)
-    private String contatoResponsavel2;
-
+    
     @Column(name = "nome_da_escola", length = 150)
     private String nomeEscola;
 

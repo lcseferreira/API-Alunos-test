@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @AllArgsConstructor // Constructor de todas propriedade
 @Builder
 public class Aluno {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,16 +22,13 @@ public class Aluno {
     private String nome;
 
     @Column(name = "cpf", length = 11, unique = true)
+    @NotEmpty(message = "Campo CPF é obrigatório")
     @CPF(message = "CPF inválido")
     private String cpf;
 
     @Column(name = "ra", nullable = false, length = 10)
     @NotEmpty(message = "Campo RA é obrigatório")
     private String ra;
-
-    @Column(name = "data_cadastro", updatable = false)
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate dataCadastro;
 
     @Column(name = "data_nascimento")
     @JsonFormat(pattern = "dd/MM/yyyy")
@@ -41,18 +37,9 @@ public class Aluno {
     @Column(name = "sexo")
     @NotEmpty(message = "Campo Sexo é obrigatório")
     private String sexo;
-    
-    @Column(name = "nome_da_escola", length = 150)
-    private String nomeEscola;
 
     @Column(name = "nome_do_professor", length = 150)
     private String nomeProfessor;
-
-    @Column(name = "serie_escolar", length = 40)
-    private String serieEscolar;
-
-    @Column(name = "periodo_escolar", length = 40)
-    private String periodoEscolar;
 
     @Column(name = "professor_especial", length = 150)
     private String nomeProfessorEspecial;
@@ -65,6 +52,10 @@ public class Aluno {
 
     @Column(name = "deficiencia", length = 150)
     private String deficiencia;
+
+    @OneToMany
+    @JoinColumn(name = "responsavel_id")
+    private Responsavel responsavel;
 
     @OneToOne
     @JoinColumn(name = "endereco_id")
@@ -81,6 +72,10 @@ public class Aluno {
 
     @Column(name = "relatorio_pedagogico", columnDefinition = "TEXT")
     private String relatorioPedagogico;
+
+    @Column(name = "data_cadastro", updatable = false)
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataCadastro;
 
     @PrePersist
     public void prePersist() {

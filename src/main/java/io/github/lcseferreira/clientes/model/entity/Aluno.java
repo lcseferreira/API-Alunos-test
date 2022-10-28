@@ -45,6 +45,15 @@ public class Aluno {
     @Column(name = "necessita_cuidador", length = 10)
     private String necessitaCuidador;
 
+    @PrePersist
+    public void prePersist() {
+        setDataCadastro(LocalDate.now());
+    }
+
+    @OneToOne
+    @JoinColumn(name = "escola_id")
+    private Escola escola;
+
     @OneToOne
     @JoinColumn(name = "responsavel_id")
     private Responsavel responsavel;
@@ -60,10 +69,5 @@ public class Aluno {
     @Column(name = "data_cadastro", updatable = false)
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataCadastro;
-
-    @PrePersist
-    public void prePersist() {
-        setDataCadastro(LocalDate.now());
-    }
 }
 
